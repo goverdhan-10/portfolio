@@ -15,7 +15,7 @@ const socialLinks = [
     displayName: "Let's Connect",
     subText: "on LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/in/yash-verma-46b95b238",
+    url: "https://www.linkedin.com/in/goverdhan-gupta/",
     color: "#0A66C2",
     gradient: "from-[#0A66C2] to-[#0077B5]",
     isPrimary: true,
@@ -23,27 +23,27 @@ const socialLinks = [
   {
     name: "Instagram",
     displayName: "Instagram",
-    subText: "@desiwebdev23",
+    subText: "@goverdhan.gupta._",
     icon: Instagram,
-    url: "https://www.instagram.com/desiwebdev23/",
+    url: "https://www.instagram.com/goverdhan.gupta._/",
     color: "#E4405F",
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]",
   },
   {
-    name: "YouTube",
-    displayName: "Youtube",
-    subText: "@desiwebdev",
-    icon: Youtube,
-    url: "https://youtube.com/@desiwebdev?si=GUQpIAeKKyEAmpSd",
-    color: "#FF0000",
-    gradient: "from-[#FF0000] to-[#CC0000]",
+    name: "Youtube",
+    displayName: "Instagram",
+    subText: "@goverdhan.gupta._",
+    icon: Instagram,
+    url: "https://www.instagram.com/goverdhan.gupta._/",
+    color: "#E4405F",
+    gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]",
   },
   {
     name: "GitHub",
     displayName: "Github",
-    subText: "@YashVerma239",
+    subText: "@goverdhan-10",
     icon: Github,
-    url: "https://github.com/YashVerma239",
+    url: "https://github.com/goverdhan-10",
     color: "#ffffff",
     gradient: "from-[#333] to-[#24292e]",
   },
@@ -98,8 +98,8 @@ const SocialLinks = () => {
         </a>
 
         {/* Instagram & YouTube */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[instagram, youtube].map((link, index) => (
+        <div className=" gap-4">
+          {[instagram].map((link, index) => (
             <a
               key={link.name}
               href={link.url}

@@ -30,7 +30,7 @@ const MainTitle = memo(() => (
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-          Frontend
+          Software
         </span>
       </span>
       <br />
@@ -88,11 +88,11 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Frontend Developer", "Final Year CSE Student"];
-const TECH_STACK = ["React", "JavaScript", "Node.js", "Tailwind"];
+const WORDS = ["Software Developer", "Frontend Developer", "Mechanical Engineer" ];
+const TECH_STACK = ["React", "C/C++", "TypeScript", "Node.js","Next.js", "Tailwind", "Express"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/YashVerma239" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/yash-verma-46b95b238" },
+  { icon: Github, link: "https://github.com/goverdhan-10" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/goverdhan-gupta/" },
 ];
 
 const Home = () => {
@@ -204,13 +204,7 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  My name is Yash Verma, a frontend developer currently pursuing
-                  my B.Tech in Computer Science and Engineering from Vidya
-                  College of Engineering. I’m in my final year and deeply
-                  passionate about exploring new technologies. I enjoy building
-                  clean, responsive, and user-friendly websites to solve
-                  real-world problems.
-                </p>
+I came to college curious about how things work and soon discovered a passion for programming. From Python scripts to a live React crypto app, I’ve loved turning ideas into solutions. Now I focus on full-stack apps with Node.js and algorithmic challenges, while boxing and music keep me inspired.                </p>
 
                 {/* Tech Stack */}
                 <div

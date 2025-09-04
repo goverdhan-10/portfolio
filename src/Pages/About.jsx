@@ -148,15 +148,15 @@ const AboutPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
                 Hello, I'm
               </span>
-              <span className="block mt-2 text-gray-200">Yash Verma</span>
+              <span className="block mt-2 text-gray-200">Goverdhan Gupta</span>
             </h2>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0" data-aos="fade-right" data-aos-duration="1500">
-              I am a passionate frontend developer currently pursuing a Bachelor of Technology in Computer Science and Engineering at Vidya College of Engineering. I'm in my final year and love diving into modern technologies, solving real-world problems, and constantly learning new skills to build user-centric web experiences.
+I am a passionate full-stack/Software developer currently pursuing a Bachelor of Technology in Mechanical Engineering at the Indian Institute of Technology BHU, Varanasi. As a final-year student, I enjoy exploring modern technologies, building scalable applications, and solving real-world problems through code. With experience across both frontend and backend development, I thrive on creating impactful, user-focused solutions while continuously learning and refining my skills.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-4">
-              <a href="https://github.com/YashVerma239" target="_blank" rel="noreferrer">
+              <a href="https://github.com/goverdhan-10" target="_blank" rel="noreferrer">
                 <button className="sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg">
                   <FileText className="w-5 h-5" /> View GitHub
                 </button>
@@ -172,13 +172,7 @@ const AboutPage = () => {
           <ProfileImage />
         </div>
 
-        <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
-            {statsData.map((stat) => (
-              <StatCard key={stat.label} {...stat} />
-            ))}
-          </div>
-        </a>
+        
       </div>
     </div>
   );

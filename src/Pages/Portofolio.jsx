@@ -12,7 +12,7 @@ import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Certificate from "../components/Certificate";
+// ...existing code...
 import { Code, Award, Boxes } from "lucide-react";
 
 const ToggleButton = ({ onClick, isShowingMore }) => (
@@ -75,25 +75,21 @@ function a11yProps(index) {
 const techStacks = [
   { icon: "html.svg", language: "HTML" },
   { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
+  { icon: "typescript.svg", language: "TypeScript" },
   { icon: "tailwind.svg", language: "Tailwind CSS" },
   { icon: "reactjs.svg", language: "ReactJS" },
   { icon: "vite.svg", language: "Vite" },
   { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
-  { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
+  { icon: "express.svg", language: "Express JS" },
+  { icon: "nextjs.svg", language: "Next JS" },
   { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { icon: "github.svg", language: "GitHub" },
 ];
 
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
-  const [projects, setProjects] = useState([]);
-  const [certificates, setCertificates] = useState([]);
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const [showAllCertificates, setShowAllCertificates] = useState(false);
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
@@ -101,55 +97,63 @@ export default function FullWidthTabs() {
     AOS.init({ once: false });
   }, []);
 
-  const fetchData = useCallback(async () => {
-    try {
-      const [projectsResponse, certificatesResponse] = await Promise.all([
-        supabase.from("projects").select("*").order("id", { ascending: true }),
-        supabase.from("certificates").select("*").order("id", { ascending: true }),
-      ]);
+  // Hardcoded projects data
+  const projects = [
+    {
+      id: 1,
+      Img: "/project1.png",
+      Title: "Varanasi Metro Route Planner",
+      Description: "It’s an interactive Varanasi metro route planner that uses Dijkstra’s algorithm to show the shortest path between stations, with autocomplete search, highlighted routes, and step-by-step journey details including line colors and changeovers.",
+      Link: "http://banarasmetro.vercel.app",
+      Dlink:"https://github.com/goverdhan-10/Route-Planner"
+      
+    },
+    {
+      id: 2,
+      Img: "/project2.png",
+      Title: "LinkUp Social Media App",
+      Description: "A full-featured social media platform with authentication, customizable profiles, posts with likes/saves, follow system, built using React, TypeScript, Vite, Tailwind CSS, and Appwrite backend.",
+      Link: "https://github.com/goverdhan-10/Link-Up",
+      Dlink: "https://github.com/goverdhan-10/Link-Up"
+    },
+    {
+      id: 3,
+      Img: "/project3.png",
+      Title: "CryptoX",
+      Description: "A real-time cryptocurrency dashboard with live prices, interactive Chart.js visualizations, conversions, and market analytics built using React, Vite, Tailwind CSS, and API integration.",
+      Link: "https://cryptograph-pi.vercel.app/",
+      Dlink: "https://github.com/goverdhan-10/cryptograph"
+    },
+    {
+      id: 4,
+      Img: "/project4.png",
+      Title: "Mystery Message",
+      Description: "Anonymous feedback app in Next.js with public shareable URLs, login, email verification, and a dashboard to view received messages.",
+      Link: "https://github.com/goverdhan-10/mystrymessage",
+      Dlink: "https://github.com/goverdhan-10/mystrymessage"
+    },
+    {
+      id: 5,
+      Img: "/project5.png",
+      Title: "Blog App",
+      Description: "A high-performance blogging platform with secure authentication, real-time content updates, user roles, and responsive design built using React, Vite, and Appwrite.",
+      Link: "https://blog-app-eight-bay.vercel.app/",
+      Dlink:"https://github.com/goverdhan-10/Blog-App"
+    },
+    // Add more projects as needed
+  ];
 
-      if (projectsResponse.error) throw projectsResponse.error;
-      if (certificatesResponse.error) throw certificatesResponse.error;
-
-      const projectData = projectsResponse.data || [];
-      const certificateData = certificatesResponse.data || [];
-
-      setProjects(projectData);
-      setCertificates(certificateData);
-
-      localStorage.setItem("projects", JSON.stringify(projectData));
-      localStorage.setItem("certificates", JSON.stringify(certificateData));
-    } catch (error) {
-      console.error("Error fetching data from Supabase:", error.message);
-    }
-  }, []);
-
-  useEffect(() => {
-    const cachedProjects = localStorage.getItem("projects");
-    const cachedCertificates = localStorage.getItem("certificates");
-
-    if (cachedProjects && cachedCertificates) {
-      setProjects(JSON.parse(cachedProjects));
-      setCertificates(JSON.parse(cachedCertificates));
-    }
-
-    fetchData();
-  }, [fetchData]);
+  // ...existing code...
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const toggleShowMore = useCallback((type) => {
-    if (type === "projects") {
-      setShowAllProjects((prev) => !prev);
-    } else {
-      setShowAllCertificates((prev) => !prev);
-    }
+  const toggleShowMore = useCallback(() => {
+    setShowAllProjects((prev) => !prev);
   }, []);
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
-  const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
 
   return (
     <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
@@ -217,8 +221,7 @@ export default function FullWidthTabs() {
             }}
           >
             <Tab icon={<Code className="mb-2 w-5 h-5 transition-all duration-300" />} label="Projects" {...a11yProps(0)} />
-            <Tab icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />} label="Certificates" {...a11yProps(1)} />
-            <Tab icon={<Boxes className="mb-2 w-5 h-5 transition-all duration-300" />} label="Tech Stack" {...a11yProps(2)} />
+            <Tab icon={<Boxes className="mb-2 w-5 h-5 transition-all duration-300" />} label="Tech Stack" {...a11yProps(1)} />
           </Tabs>
         </AppBar>
 
@@ -228,36 +231,19 @@ export default function FullWidthTabs() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
                 {displayedProjects.map((project, index) => (
                   <div key={project.id || index} data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"} data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                    <CardProject Img={project.Img} Title={project.Title} Description={project.Description} Link={project.Link} id={project.id} />
+                    <CardProject Img={project.Img} Title={project.Title} Description={project.Description} Link={project.Link} Dlink={project.Dlink} />
                   </div>
                 ))}
               </div>
             </div>
             {projects.length > initialItems && (
               <div className="mt-6 w-full flex justify-start">
-                <ToggleButton onClick={() => toggleShowMore("projects")} isShowingMore={showAllProjects} />
+                <ToggleButton onClick={toggleShowMore} isShowingMore={showAllProjects} />
               </div>
             )}
           </TabPanel>
 
           <TabPanel value={value} index={1} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-                {displayedCertificates.map((certificate, index) => (
-                  <div key={certificate.id || index} data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"} data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                    <Certificate ImgSertif={certificate.Img} />
-                  </div>
-                ))}
-              </div>
-            </div>
-            {certificates.length > initialItems && (
-              <div className="mt-6 w-full flex justify-start">
-                <ToggleButton onClick={() => toggleShowMore("certificates")} isShowingMore={showAllCertificates} />
-              </div>
-            )}
-          </TabPanel>
-
-          <TabPanel value={value} index={2} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
                 {techStacks.map((stack, index) => (
