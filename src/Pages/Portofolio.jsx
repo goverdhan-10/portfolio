@@ -93,6 +93,7 @@ export default function FullWidthTabs() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
+  const swiperRef = React.useRef(null);
 
   useEffect(() => {
     AOS.init({ once: false });
@@ -148,6 +149,9 @@ export default function FullWidthTabs() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(newValue);
+    }
   };
 
   const toggleShowMore = useCallback(() => {
@@ -227,6 +231,7 @@ export default function FullWidthTabs() {
         </AppBar>
 
         <Swiper
+          onSwiper={swiper => { swiperRef.current = swiper; }}
           onSlideChange={swiper => setValue(swiper.activeIndex)}
           initialSlide={value}
           allowTouchMove={true}
