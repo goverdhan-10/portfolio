@@ -103,7 +103,7 @@ export default function FullWidthTabs() {
   const projects = [
     {
       id: 1,
-      Img: "/projectN.png",
+      Img: "/Screenshot 2025-12-07 195233.png",
       Title: "Nexus",
       Description: "Real-time messaging platform enabling instant, bidirectional communication with support for low-latency user interactions.",
       Link: "https://nexus-2xcs.onrender.com/",
@@ -111,7 +111,7 @@ export default function FullWidthTabs() {
     },
      {
       id: 2,
-      Img: "/project4.png",
+      Img: "/Screenshot 2025-12-07 195122.png",
       Title: "ShhBox",
       Description: "Anonymous feedback app in Next.js with public shareable URLs, login, email verification, and a dashboard to view received messages.",
       Link: "https://shhhbox.vercel.app/",
