@@ -103,6 +103,22 @@ export default function FullWidthTabs() {
   const projects = [
     {
       id: 1,
+      Img: "/projectN.png",
+      Title: "Nexus",
+      Description: "Real-time messaging platform enabling instant, bidirectional communication with support for low-latency user interactions.",
+      Link: "https://nexus-2xcs.onrender.com/",
+      Dlink: "https://github.com/goverdhan-10/Nexus"
+    },
+     {
+      id: 2,
+      Img: "/project4.png",
+      Title: "ShhBox",
+      Description: "Anonymous feedback app in Next.js with public shareable URLs, login, email verification, and a dashboard to view received messages.",
+      Link: "https://shhhbox.vercel.app/",
+      Dlink: "https://github.com/goverdhan-10/mystrymessage"
+    },
+    {
+      id: 3,
       Img: "/project1.png",
       Title: "Varanasi Metro Route Planner",
       Description: "It’s an interactive Varanasi metro route planner that uses Dijkstra’s algorithm to show the shortest path between stations, with autocomplete search, highlighted routes, and step-by-step journey details including line colors and changeovers.",
@@ -111,7 +127,7 @@ export default function FullWidthTabs() {
       
     },
     {
-      id: 2,
+      id: 4,
       Img: "/project2.png",
       Title: "LinkUp Social Media App",
       Description: "A full-featured social media platform with authentication, customizable profiles, posts with likes/saves, follow system, built using React, TypeScript, Vite, Tailwind CSS, and Appwrite backend.",
@@ -119,7 +135,7 @@ export default function FullWidthTabs() {
       Dlink: "https://github.com/goverdhan-10/Link-Up"
     },
     {
-      id: 3,
+      id: 5,
       Img: "/project3.png",
       Title: "CryptoX",
       Description: "A real-time cryptocurrency dashboard with live prices, interactive Chart.js visualizations, conversions, and market analytics built using React, Vite, Tailwind CSS, and API integration.",
@@ -127,15 +143,7 @@ export default function FullWidthTabs() {
       Dlink: "https://github.com/goverdhan-10/cryptograph"
     },
     {
-      id: 4,
-      Img: "/project4.png",
-      Title: "Mystery Message",
-      Description: "Anonymous feedback app in Next.js with public shareable URLs, login, email verification, and a dashboard to view received messages.",
-      Link: "https://github.com/goverdhan-10/mystrymessage",
-      Dlink: "https://github.com/goverdhan-10/mystrymessage"
-    },
-    {
-      id: 5,
+      id: 6,
       Img: "/project5.png",
       Title: "Blog App",
       Description: "A high-performance blogging platform with secure authentication, real-time content updates, user roles, and responsive design built using React, Vite, and Appwrite.",
