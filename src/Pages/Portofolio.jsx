@@ -131,7 +131,7 @@ export default function FullWidthTabs() {
       Img: "/project2.png",
       Title: "LinkUp Social Media App",
       Description: "A full-featured social media platform with authentication, customizable profiles, posts with likes/saves, follow system, built using React, TypeScript, Vite, Tailwind CSS, and Appwrite backend.",
-      Link: "https://github.com/goverdhan-10/Link-Up",
+      Link: "https://link-up-black-seven.vercel.app/",
       Dlink: "https://github.com/goverdhan-10/Link-Up"
     },
     {
